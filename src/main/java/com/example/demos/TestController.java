@@ -35,7 +35,7 @@ public class TestController {
         return "Hello World! ID "+ id;
     }
 
-    //-- 매개변수를 받는 방법 3 : http://localhost:8080/test/testRequestBody?{'id':123,'message':'hello'}
+    //-- 매개변수를 받는 방법 3 : http://localhost:8080/test/testRequestBody?{"id":123,"message":"hello"}
     // 객체와 같이 복잡한 데이터 주고받기
     // TODO 책 대로 해봤는데 안됨 ㅅㅂ
     @GetMapping("/testRequestBody")
