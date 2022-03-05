@@ -9,10 +9,10 @@ import java.util.Optional;
 
 @Slf4j
 @Service        // 스테레오 타입 어노테이션.
-                // 내부에 @Component 를 가지고 있어서 객체가 자동으로 Bean에 등록되며, 특별한 기능차이는 없다.
+                // 내부에 @Component 를 가지고 있어서 객체가 자동으로 Bean으로 등록되며, 특별한 기능차이는 없다.
 
-// 서비스 레이어는 컨트롤러 및 퍼시스턴스와 분리되어, 비즈니스 로직에 집중한다.
-//
+// 서비스 레이어는 컨트롤러 및 퍼시스턴스와 분리되어, 비즈니스 로직을 집중적으로 수행한다.
+
 public class TodoService {
 
     @Autowired
@@ -30,6 +30,7 @@ public class TodoService {
 
     // 생성 메서드
     public List<TodoEntity> create(final TodoEntity entity) {
+
         if (entity == null) {
             log.warn("Entity cannot be null");
             throw new RuntimeException("Entity cannot be null");
@@ -40,9 +41,8 @@ public class TodoService {
             throw new RuntimeException("unknown user");
         }
         repository.save(entity);
-
         log.info("Entity if : {} is saved", entity.getId());
-
+        // 아직까진 userId가 모두 동일하므로 해당 데이터를 모두 가져오게 됨.
         return repository.findByUserId(entity.getUserid());
     }
 
@@ -56,6 +56,10 @@ public class TodoService {
             log.warn("unknown user");
             throw new RuntimeException("unknown user");
         }
+    }
+
+    public List<TodoEntity> getAll() {
+        return repository.getAll();
     }
 
     public List<TodoEntity> retrieve(final String userId) {
