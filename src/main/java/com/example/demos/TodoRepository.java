@@ -5,7 +5,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+// * URI (Uniform Resource Identifier) : 웹에서 논리적, 물리적 리소스를 식별하는 고유한 문자열 시퀀스
+// * URL (Uniform Resource Locator) : 웹에서 논리적, 물리적 리소스의 위치를 가리키는 문자열 시퀀스
 // * 퍼시스턴트 레이어 : DB와 통신며 쿼리를 보내고 해석해 엔티티 오브젝트로 변환해준다.
 // 엔티티 클래스와 테이블은 서로가 기존부터 호환가능성을 두고 만들어진 것이 아니기 때문에 불일치가 발생할 수 있음.
 // 이를 ORM을 통해 객체 간의 관계를 바탕으로 SQL문을 자동으로 생성하여 불일치를 해결한다.
