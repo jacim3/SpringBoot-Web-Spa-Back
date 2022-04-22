@@ -11,7 +11,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 // @Bean - 메소드 레벨에서 선언하여, 반환되는 인스턴스를 수동으로 Bean으로 등록시킴 (직접적으로 스프링에서 Bean을 관리하기 위함)
 // @Component - 클래스 레벨에서 선언하여, @ComponentScan을 통하여 자동으로 Bean을 찾고 등록시킴.
 public class DemosApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(DemosApplication.class, args);
     }
